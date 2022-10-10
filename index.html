@@ -43,7 +43,7 @@
           const epost = document.getElementById("epost");
           // sjekk om URL-en har parametre
           const queryString = window.location.search;
-          const urlParams = new URLSearchParams(q);
+          const urlParams = new URLSearchParams(queryString);
           const navn_req = urlParams.get("navn");
           if (url.Params.get("navn") != null) {
               navn.innerHTML = navn_req;
