@@ -25,14 +25,30 @@
   <form>
      <label for="navn">Navn</label>
      <input type="text" name="navn" required /> 
-	 <label for="epost">E-post</label>
-	 <input type="email" name="epost" />
-<input type="submit" value="Send">	 
+     <label for="epost">E-post</label>
+     <input type="email" name="epost" />
+     <input type="submit" value="Send">	 
   </form>
+  
+     <span id="navn"></span>
+     <br />
+     <span id="epost"></span>
+  
 
   <script>
-   // Se https://html.spec.whatwg.org/multipage/scripting.html#restrictions-for-contents-of-script-elements
    // Her skrives kode i JavaScript som "gir liv" til bilde på skjermen.
+      window.onload = (event) => {
+          // få kontakt med elementene i DOM treet
+          const navn = document.getElementById("navn");
+          const epost = document.getElementById("epost");
+          // sjekk om URL-en har parametre
+          const queryString = window.location.search;
+          const urlParams = new URLSearchParams(q);
+          const navn_req = urlParams.get("navn");
+          if (url.Params.get("navn") != null) {
+              navn.innerHTML = navn_req;
+          }
+      } 
   </script>
 
 </body>
